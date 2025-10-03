@@ -1,0 +1,7 @@
+{
+	"name": "AzureBlobStorage967",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/d34a61a1-8a91-47ed-b72e-c2955a811a3e/resourceGroups/Check2Cloud/providers/Microsoft.Storage/storageAccounts/check2cloud",
+		"groupId": "blob"
+	}
+}
