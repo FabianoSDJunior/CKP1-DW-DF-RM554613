@@ -2,7 +2,7 @@
 	"name": "OracleTable1",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "Oracle4",
+			"referenceName": "Oracle3",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
