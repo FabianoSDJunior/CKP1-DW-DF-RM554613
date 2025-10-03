@@ -13,7 +13,7 @@
 			"encryptionTypesClient": "(AES128, AES192, AES256, 3DES112, 3DES168)",
 			"cryptoChecksumClient": "accepted",
 			"cryptoChecksumTypesClient": "(SHA1, SHA256, SHA384, SHA512)",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDVDNjlDQUE5LTBBNTgtNEUxNi1BRjAwLUJDNTcxNDYwMDgyRV9iYTYxMzc0Mi1kMmZlLTQ4ZjYtYjg4Zi04MjUxYjY2NmNiYzQiDQp9"
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDVDNjlDQUE5LTBBNTgtNEUxNi1BRjAwLUJDNTcxNDYwMDgyRV84ZDFmMzE0NS05NzEwLTRmZjEtYjg5Mi0wMzgzYjhjOWExYzgiDQp9"
 		},
 		"connectVia": {
 			"referenceName": "AutoResolveIntegrationRuntime",
