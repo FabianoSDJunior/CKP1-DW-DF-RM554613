@@ -1,0 +1,9 @@
+{
+	"name": "check2cloud2",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9f302d03-b4b7-4fb8-8ab8-ce0e8685bfe1",
+		"tenantId": "11dbbfe2-89b8-4549-be10-cec364e59551"
+	}
+}
