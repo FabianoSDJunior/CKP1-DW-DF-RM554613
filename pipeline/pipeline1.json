@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "db_cli",
+				"name": "dbcli",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -26,7 +26,8 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -55,13 +56,13 @@
 						"referenceName": "armazena_dados",
 						"type": "DatasetReference",
 						"parameters": {
-							"nome_do_arquivo": "db_cli"
+							"nome_do_arquivo": "dbcli"
 						}
 					}
 				]
 			},
 			{
-				"name": "db_cli_fisica",
+				"name": "dbclifisica",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -84,7 +85,8 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -113,13 +115,13 @@
 						"referenceName": "armazena_dados",
 						"type": "DatasetReference",
 						"parameters": {
-							"nome_do_arquivo": "db_cli_fisica"
+							"nome_do_arquivo": "dbclifisica"
 						}
 					}
 				]
 			},
 			{
-				"name": "db_end_cli",
+				"name": "dbendcli",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -142,7 +144,8 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -171,13 +174,13 @@
 						"referenceName": "armazena_dados",
 						"type": "DatasetReference",
 						"parameters": {
-							"nome_do_arquivo": "db_end_cli"
+							"nome_do_arquivo": "dbendcli"
 						}
 					}
 				]
 			},
 			{
-				"name": "db_logradouro",
+				"name": "dblogradouro",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -200,7 +203,8 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -229,13 +233,13 @@
 						"referenceName": "armazena_dados",
 						"type": "DatasetReference",
 						"parameters": {
-							"nome_do_arquivo": "db_logradouro"
+							"nome_do_arquivo": "dblogradouro"
 						}
 					}
 				]
 			},
 			{
-				"name": "db_bairro",
+				"name": "dbbairro",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -258,7 +262,8 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -287,13 +292,13 @@
 						"referenceName": "armazena_dados",
 						"type": "DatasetReference",
 						"parameters": {
-							"nome_do_arquivo": "db_bairro"
+							"nome_do_arquivo": "dbbairro"
 						}
 					}
 				]
 			},
 			{
-				"name": "db_cidade",
+				"name": "dbcidade",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -316,7 +321,8 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -345,13 +351,13 @@
 						"referenceName": "armazena_dados",
 						"type": "DatasetReference",
 						"parameters": {
-							"nome_do_arquivo": "db_cidade"
+							"nome_do_arquivo": "dbcidade"
 						}
 					}
 				]
 			},
 			{
-				"name": "db_estado",
+				"name": "dbestado",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -374,7 +380,8 @@
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobStorageWriteSettings",
+							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -403,7 +410,7 @@
 						"referenceName": "armazena_dados",
 						"type": "DatasetReference",
 						"parameters": {
-							"nome_do_arquivo": "db_estado"
+							"nome_do_arquivo": "dbestado"
 						}
 					}
 				]
@@ -413,43 +420,43 @@
 				"type": "ExecuteDataFlow",
 				"dependsOn": [
 					{
-						"activity": "db_bairro",
+						"activity": "dbcli",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "db_end_cli",
+						"activity": "dbclifisica",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "db_cli_fisica",
+						"activity": "dbendcli",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "db_cli",
+						"activity": "dblogradouro",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "db_estado",
+						"activity": "dbbairro",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "db_logradouro",
+						"activity": "dbestado",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "db_cidade",
+						"activity": "dbcidade",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -464,54 +471,6 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataflow": {
-						"referenceName": "Check2",
-						"type": "DataFlowReference",
-						"datasetParameters": {
-							"dbcli": {
-								"nome_do_arquivo": {
-									"value": "@activity('db_cli').output",
-									"type": "Expression"
-								}
-							},
-							"dbendcli": {
-								"nome_do_arquivo": {
-									"value": "@activity('db_end_cli').output",
-									"type": "Expression"
-								}
-							},
-							"dbbairro": {
-								"nome_do_arquivo": {
-									"value": "@activity('db_bairro').output",
-									"type": "Expression"
-								}
-							},
-							"dbclifisica": {
-								"nome_do_arquivo": {
-									"value": "@activity('db_cli_fisica').output",
-									"type": "Expression"
-								}
-							},
-							"dblogradouro": {
-								"nome_do_arquivo": {
-									"value": "@activity('db_logradouro').output",
-									"type": "Expression"
-								}
-							},
-							"dbestado": {
-								"nome_do_arquivo": {
-									"value": "@activity('db_estado').output",
-									"type": "Expression"
-								}
-							},
-							"dbcidade": {
-								"nome_do_arquivo": {
-									"value": "@activity('db_cidade').output",
-									"type": "Expression"
-								}
-							}
-						}
-					},
 					"compute": {
 						"coreCount": 8,
 						"computeType": "General"
