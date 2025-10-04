@@ -57,7 +57,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "armazena_dados",
+						"referenceName": "ArquivoFinalCP2",
 						"type": "DatasetReference"
 					},
 					"name": "final"
