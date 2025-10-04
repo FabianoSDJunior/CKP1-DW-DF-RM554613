@@ -60,7 +60,7 @@
 						"referenceName": "armazena_dados",
 						"type": "DatasetReference"
 					},
-					"name": "Final"
+					"name": "final"
 				}
 			],
 			"transformations": [
@@ -169,7 +169,7 @@
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     saveOrder: 1) ~> Final"
+				"     saveOrder: 1) ~> final"
 			]
 		}
 	}
