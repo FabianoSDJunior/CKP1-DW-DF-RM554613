@@ -312,7 +312,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "OracleSource",
-						"oracleReaderQuery": "SELECT\n      C.CD_CIDADE,\n      C.NM_CIDADE AS NM_CIDADE\nFROM DBURGER.DB_CIDADE C;",
+						"oracleReaderQuery": "SELECT\n    C.CD_CIDADE,    \n    C.NM_CIDADE AS NM_CIDADE,\n    C.SG_ESTADO\nFROM DBURGER.DB_CIDADE C;",
 						"partitionOption": "None",
 						"numberPrecision": 38,
 						"numberScale": 18,
@@ -420,25 +420,13 @@
 				"type": "ExecuteDataFlow",
 				"dependsOn": [
 					{
-						"activity": "dbcli",
+						"activity": "dbestado",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "dbclifisica",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					},
-					{
-						"activity": "dbendcli",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					},
-					{
-						"activity": "dblogradouro",
+						"activity": "dbcidade",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -450,13 +438,25 @@
 						]
 					},
 					{
-						"activity": "dbestado",
+						"activity": "dblogradouro",
 						"dependencyConditions": [
 							"Succeeded"
 						]
 					},
 					{
-						"activity": "dbcidade",
+						"activity": "dbendcli",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "dbclifisica",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "dbcli",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -471,6 +471,36 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"dataflow": {
+						"referenceName": "Check2",
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"dbcli": {
+								"nome_do_arquivo": "dbcli"
+							},
+							"dbendcli": {
+								"nome_do_arquivo": "dbendcli"
+							},
+							"dbbairro": {
+								"nome_do_arquivo": "dbbairro"
+							},
+							"dbclifisica": {
+								"nome_do_arquivo": "dbclifisica"
+							},
+							"dblogradouro": {
+								"nome_do_arquivo": "dblogradouro"
+							},
+							"dbestado": {
+								"nome_do_arquivo": "dbestado"
+							},
+							"dbcidade": {
+								"nome_do_arquivo": "dbcidade"
+							},
+							"Final": {
+								"nome_do_arquivo": "Final"
+							}
+						}
+					},
 					"compute": {
 						"coreCount": 8,
 						"computeType": "General"
