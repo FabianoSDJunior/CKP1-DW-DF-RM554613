@@ -1,0 +1,93 @@
+{
+	"name": "Check2",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "armazena_dados",
+						"type": "DatasetReference"
+					},
+					"name": "dbcli"
+				},
+				{
+					"dataset": {
+						"referenceName": "armazena_dados",
+						"type": "DatasetReference"
+					},
+					"name": "dbendcli"
+				},
+				{
+					"dataset": {
+						"referenceName": "armazena_dados",
+						"type": "DatasetReference"
+					},
+					"name": "dbbairro"
+				},
+				{
+					"dataset": {
+						"referenceName": "armazena_dados",
+						"type": "DatasetReference"
+					},
+					"name": "dbclifisica"
+				},
+				{
+					"dataset": {
+						"referenceName": "armazena_dados",
+						"type": "DatasetReference"
+					},
+					"name": "dblogradouro"
+				},
+				{
+					"dataset": {
+						"referenceName": "armazena_dados",
+						"type": "DatasetReference"
+					},
+					"name": "dbestado"
+				},
+				{
+					"dataset": {
+						"referenceName": "armazena_dados",
+						"type": "DatasetReference"
+					},
+					"name": "dbcidade"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "join1"
+				}
+			],
+			"scriptLines": [
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> dbcli",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> dbendcli",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> dbbairro",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> dbclifisica",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> dblogradouro",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> dbestado",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> dbcidade",
+				"dbendcli join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"     joinType:'inner',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join1"
+			]
+		}
+	}
+}

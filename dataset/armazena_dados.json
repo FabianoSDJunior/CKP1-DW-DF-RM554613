@@ -19,7 +19,7 @@
 					"value": "@dataset().nome_do_arquivo",
 					"type": "Expression"
 				},
-				"container": "Arquivos"
+				"container": "arquivos"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
